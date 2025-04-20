@@ -1,0 +1,61 @@
+section .menu{
+    border-radius: 50px;
+    box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.5);
+
+}
+
+section .menu ul{
+    margin:0;
+    padding:0;
+}
+
+
+
+section .menu ul li{
+    display: inline-block;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+section .menu ul li a{
+color: #454545;
+}
+
+section .menu ul li a:hover{
+    font-size: 18px;
+}
+
+
+section .menu ul li .logo{
+    margin-right: 70vw;
+}
+
+section .menu ul li img{
+    width: 70px;
+    height: 70px;
+}
+
+@media screen and (max-width:885px){
+    section .menu ul li .logo{
+        margin-right: 65vw;
+    }
+    
+
+}
+
+@media screen and (max-width:733px){
+    section .menu ul li .logo{
+        margin-right: 60vw;
+    }
+    
+
+}
+
+
+@media screen and (max-width:640px){
+    section .menu ul li .logo{
+        margin-right: 55vw;
+    }
+
+}
+
