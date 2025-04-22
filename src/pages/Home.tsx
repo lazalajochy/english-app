@@ -2,10 +2,12 @@ import { GoogleLogin } from "@react-oauth/google"
 import { jwtDecode } from "jwt-decode"
 import { useNavigate } from "react-router-dom";
 import { IUserToken } from "../interface/interfaces"
-
+import { useDispatch } from "react-redux";
+import { setUser } from "../utils/userSlice";
 
 export const Home = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate(),
+          dispatch = useDispatch();
 
     const handleToken = async (token: string) => {
         const userToken = jwtDecode<IUserToken>(token);
@@ -16,14 +18,13 @@ export const Home = () => {
             picture: userToken?.picture,
             family_name: userToken?.family_name,
         }
+
         await login(user);
     };
 
     const login = async (userData: IUserToken) => {
-        localStorage.setItem("user", JSON.stringify(userData));
-        if(localStorage.getItem("user")){
-            navigate("/dashboard")
-        }
+        dispatch(setUser(JSON.stringify(userData))); 
+        navigate("/dashboard"); 
     }
 
     return (
