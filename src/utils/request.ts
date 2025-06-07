@@ -4,7 +4,7 @@ export default async function request<T>(method: string = "GET", url: string = "
   try {
     const config: AxiosRequestConfig = {
       method,
-      url: `${import.meta.env.VITE_API_URL}${url}`,
+      url: `https://english-note-backend.onrender.com/${url}`,
       data, 
     };
 
