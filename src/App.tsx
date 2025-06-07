@@ -5,7 +5,7 @@ import { MainRoute } from './routes/MainRoute';
 
 function App() {
   return (
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId="1044435155755-s32q81p9sho3nsi32r6mn7n16g16p39k.apps.googleusercontent.com">
       <MainRoute />
     </GoogleOAuthProvider>
   );
