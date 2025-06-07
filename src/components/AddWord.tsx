@@ -61,8 +61,6 @@ export const AddWord = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-2xl mx-auto p-4"
         >
-
-       
                 <h1 className="text-2xl font-bold mb-4">Add a New Word</h1>
                 <form className="space-y-4" onSubmit={sendData}>
                     <div>
