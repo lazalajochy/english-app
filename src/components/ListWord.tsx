@@ -74,10 +74,10 @@ export const ListWord = () => {
                                         className="text-xl font-semibold text-center flex items-center justify-center h-full"
                                     >
                                         <div>
-                                            <div className='text-gray-700 '>
+                                            <div className='text-gray-700 text-3xl '>
                                                 {item.word}
                                             </div>
-                                            <div className='text-gray-500 text-sm'>
+                                            <div className='text-gray-500 text-2xl'>
                                                 {item?.example}
                                             </div>
                                         </div>
