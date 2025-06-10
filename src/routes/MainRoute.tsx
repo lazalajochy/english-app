@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { Home } from '../pages/Home';
 import { Dashboard } from '../pages/Dashboard';
 import { ListWord } from "../components/ListWord";
-import { Vacabulary } from "../components/Vacabulary";
+
 
 export const MainRoute = () => {
     const user = useSelector((state: RootState) => state.user.value);
@@ -17,7 +17,6 @@ export const MainRoute = () => {
                 <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/" />}>
                     <Route path="addWord" element={<AddWord />} />
                     <Route path="listWord" element={<ListWord />} />
-                    <Route path="vacabulary" element={<Vacabulary />} />
                 </Route>
             </Routes>
         </BrowserRouter>
