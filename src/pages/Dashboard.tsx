@@ -5,7 +5,7 @@ import { AddWord } from "../components/AddWord"
 
 export const Dashboard = () => {
     return (
-        <div className="dashboard">
+        <div className="dashboard scroll-smooth">
             <Head />
             <Hero/>
             <AddWord/>

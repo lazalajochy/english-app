@@ -2,7 +2,6 @@ import { useState } from "react";
 import request from "../utils/request";
 import { RootState } from "../store";
 import { useSelector } from "react-redux";
-import { motion } from "framer-motion";
 
 
 export const AddWord = () => {
@@ -55,82 +54,85 @@ export const AddWord = () => {
     };
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-2xl mx-auto p-4"
-            id="Addword"
-        >
-                <h1 className="text-2xl font-bold mb-4">Add a New Word</h1>
-                <form className="space-y-4" onSubmit={sendData}>
+        <div id="Addword" className="w-full bg-white py-5">
+            <div className="max-w-[800px] mx-auto px-6">
+                <p className="text-gray-700 font-extrabold text-3xl sm:text-4xl text-center uppercase mb-8">
+                    Add a New Word
+                </p>
+
+                <form className="space-y-6  p-6 rounded-xl shadow-md" onSubmit={sendData}>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Word</label>
+                        <label className="block text-sm font-medium text-gray-600 mb-1">Word</label>
                         <input
                             type="text"
                             name="word"
                             value={word.word}
                             onChange={handleChange}
-                            className="mt-1 block w-full h-[50px] border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
                             placeholder="Enter the word"
+                            className="w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500 focus:ring-2 px-4 py-3 text-gray-700 placeholder-gray-400 transition"
                         />
                     </div>
+
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Definition</label>
+                        <label className="block text-sm font-medium text-gray-600 mb-1">Definition</label>
                         <textarea
                             name="definition"
                             value={word.definition}
                             onChange={handleChange}
-                            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
                             placeholder="Enter the definition"
                             rows={4}
+                            className="w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500 focus:ring-2 px-4 py-3 text-gray-700 placeholder-gray-400 transition"
                         ></textarea>
                     </div>
+
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Example Sentence</label>
+                        <label className="block text-sm font-medium text-gray-600 mb-1">Example Sentence</label>
                         <textarea
                             name="example"
                             value={word.example}
                             onChange={handleChange}
-                            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
                             placeholder="Enter an example sentence"
                             rows={4}
+                            className="w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500 focus:ring-2 px-4 py-3 text-gray-700 placeholder-gray-400 transition"
                         ></textarea>
                     </div>
+
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Part of Speech</label>
+                        <label className="block text-sm font-medium text-gray-600 mb-1">Part of Speech</label>
                         <select
                             name="partOfSpeech"
                             value={word.partOfSpeech}
                             onChange={handleChange}
-                            className="mt-1 block w-full h-[50px] border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                            className="w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500 focus:ring-2 px-4 py-3 text-gray-700 transition"
                         >
-                            <option value="">--Select--</option>
+                            <option value="">-- Select --</option>
                             <option value="noun">Noun</option>
                             <option value="verb">Verb</option>
                             <option value="adjective">Adjective</option>
                             <option value="adverb">Adverb</option>
                         </select>
                     </div>
+
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Select a picture</label>
+                        <label className="block text-sm font-medium text-gray-600 mb-1">Select a picture</label>
                         <input
                             type="file"
                             accept="image/*"
                             onChange={handleFileChange}
-                            className="mt-1 block w-full h-[50px] border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                            className="w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500 focus:ring-2 px-4 py-2 text-gray-700 transition"
                         />
                     </div>
+
                     <div>
                         <button
                             type="submit"
-                            className="w-full h-[50px] bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300"
+                            className="w-full bg-[#00df9a]  text-white font-semibold rounded-lg px-4 py-3 transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300"
                         >
                             Add Word
                         </button>
                     </div>
                 </form>
-            
-        </motion.div>
-    );
+            </div>
+        </div>
+    )
 };
