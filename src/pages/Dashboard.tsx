@@ -1,14 +1,15 @@
 import { Head } from "../components/Head"
-import { Outlet } from "react-router-dom";
+import { Hero } from "../components/Hero"
+import { AddWord } from "../components/AddWord"
 
 
 export const Dashboard = () => {
     return (
         <div className="dashboard">
             <Head />
-            <div className="p-5">
-                <Outlet /> 
-            </div>
+            <Hero/>
+            <AddWord/>
+            
         </div>
     )
 }

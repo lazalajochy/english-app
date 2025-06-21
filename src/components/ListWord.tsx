@@ -27,6 +27,7 @@ export const ListWord = () => {
         const fetchWords = async () => {
             try {
                 const response = await request<IData>("GET", `api/words/${parsedUser?.sub}`);
+                console.log(response)
                 setData(
                     response.data?.map((item: any) => ({
                         word: item.word,

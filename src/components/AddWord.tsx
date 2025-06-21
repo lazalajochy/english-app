@@ -60,6 +60,7 @@ export const AddWord = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-2xl mx-auto p-4"
+            id="Addword"
         >
                 <h1 className="text-2xl font-bold mb-4">Add a New Word</h1>
                 <form className="space-y-4" onSubmit={sendData}>
